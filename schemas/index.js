@@ -1,4 +1,3 @@
-const { contactsJoiSchema, statusJoiSchema } = require("./contacts");
 const {
   registerJoiSchema,
   loginJoiSchema,
@@ -7,8 +6,6 @@ const {
 } = require("./users");
 
 module.exports = {
-  contactsJoiSchema,
-  statusJoiSchema,
   registerJoiSchema,
   loginJoiSchema,
   subJoiSchema,
