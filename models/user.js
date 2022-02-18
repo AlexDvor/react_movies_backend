@@ -7,6 +7,7 @@ const userSchema = Schema(
       type: String,
       required: [true, "Name is required"],
     },
+
     password: {
       type: String,
       required: [true, "Password is required"],
@@ -28,14 +29,17 @@ const userSchema = Schema(
       type: String,
       default: null,
     },
+
     avatarURL: {
       type: String,
       required: true,
     },
+
     verify: {
       type: Boolean,
       default: false,
     },
+
     verifyToken: {
       type: String,
       required: [true, "Verify token is required"],
