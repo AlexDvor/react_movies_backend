@@ -6,6 +6,6 @@ const { registerJoiSchema, loginJoiSchema } = require("../../schemas");
 
 router.post("/signup", validation(registerJoiSchema), ctrl.register);
 router.post("/login", validation(loginJoiSchema), ctrl.login);
-router.post("/logout", auth, ctrl.logout);
+router.get("/logout", auth, ctrl.logout);
 
 module.exports = router;
