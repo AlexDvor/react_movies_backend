@@ -20,11 +20,12 @@ const login = async (req, res, next) => {
       status: "success",
       code: 200,
       data: {
-        token,
         user: {
+          name: user.name,
           email: user.email,
           subscription: user.subscription,
         },
+        token,
       },
     });
   } catch (error) {
