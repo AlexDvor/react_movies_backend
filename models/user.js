@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const userSchema = Schema(
+const userSchema = new Schema(
   {
     name: {
       type: String,
@@ -44,6 +44,8 @@ const userSchema = Schema(
       type: String,
       required: [true, "Verify token is required"],
     },
+
+    favorite: [{}],
   },
   { versionKey: false, timestamps: true }
 );

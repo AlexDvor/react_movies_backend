@@ -1,16 +1,17 @@
-// const { User } = require("../../models");
+const { User } = require("../../models");
 
 const getCurrent = async (req, res) => {
-  const { name, email, subscription } = req.user;
+  const { _id } = req.user;
+  const result = await User.findOne({ _id });
 
   res.json({
     status: "success",
     code: 200,
     data: {
       user: {
-        name,
-        email,
-        subscription,
+        name: result.name,
+        email: result.email,
+        subscription: result.subscription,
       },
     },
   });
