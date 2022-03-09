@@ -9,7 +9,7 @@ router.get("/verify/:verifyToken", ctrl.verifyEmail);
 router.get("/favorite", auth, ctrl.getFavoriteList);
 router.delete("/remove", auth, ctrl.removeFavoriteMovie);
 router.patch("/avatars", auth, upload.single("avatar"), ctrl.updateAvatar);
-router.post("/add", auth, ctrl.addFavoriteMovie);
+router.post("/movie/add", auth, ctrl.addFavoriteMovie);
 router.post("/verify", validation(emailJoiSchema), ctrl.verificationByRequest);
 router.patch(
   "/:userId/subscription",
