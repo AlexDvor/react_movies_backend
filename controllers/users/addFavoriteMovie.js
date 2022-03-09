@@ -4,26 +4,14 @@ const addFavoriteMovie = async (req, res, next) => {
   try {
     const { _id } = req.user;
     const user = await User.findOne({ _id });
-
-    // UserModel.findById("5e25a8e88170fb0f8ce90f6f", function (err, user) {
-    //   if (err) return console.error(err);
-
-    //   //Присвоение измененных значений
-    //   user.name = "Светлана Иванова";
-    //   user.favoriteFoods.push("гамбургер");
-
-    //   //Сохранение документа в БД
-    //   user.save(function (err) {
-    //     if (err) throw err;
-    //     console.log("Информация о пользователе " + user.name + " обновлена");
-    //   });
-    // });
-
-    // const updatedUser = await User.findOneAndUpdate(
-    //   { _id },
-    //   { favorite: { ...req.body, ...user.favorite } },
-    //   { new: true }
-    // );
+    User.findById(_id, function (err, user) {
+      if (err) return console.error(err);
+      user.favorite.push(req.body);
+      user.save(function (err) {
+        if (err) throw err;
+        console.log("The operation was successful");
+      });
+    });
 
     res.json({
       status: "success",

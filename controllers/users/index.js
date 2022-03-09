@@ -4,6 +4,8 @@ const updateAvatar = require("./updateAvatar");
 const verifyEmail = require("./verifyEmail");
 const verificationByRequest = require("./verificationByRequest");
 const addFavoriteMovie = require("./addFavoriteMovie");
+const getFavoriteList = require("./getFavoriteList");
+const removeFavoriteMovie = require("./removeFavoriteMovie");
 
 module.exports = {
   getCurrent,
@@ -12,4 +14,6 @@ module.exports = {
   verifyEmail,
   verificationByRequest,
   addFavoriteMovie,
+  getFavoriteList,
+  removeFavoriteMovie,
 };
