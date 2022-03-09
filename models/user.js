@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
+const { number } = require("joi");
 
 const userSchema = new Schema(
   {
@@ -45,7 +46,7 @@ const userSchema = new Schema(
       required: [true, "Verify token is required"],
     },
 
-    favorite: [{}],
+    favorite: [],
   },
   { versionKey: false, timestamps: true }
 );
