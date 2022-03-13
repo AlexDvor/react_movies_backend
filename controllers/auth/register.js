@@ -8,7 +8,6 @@ const sendEmail = require("../../helpers/sendEmail");
 const register = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
-    console.log(req.body);
     const user = await User.findOne({ email });
     if (user) throw new Conflict(`This email in use`);
     const verifyToken = nanoid();

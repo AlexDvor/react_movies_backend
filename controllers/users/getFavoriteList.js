@@ -8,9 +8,7 @@ const getFavoriteList = async (req, res, next) => {
     res.json({
       status: "success",
       code: 200,
-      data: {
-        data: result.favorite,
-      },
+      data: result.favorite,
     });
   } catch (error) {
     next(error);
