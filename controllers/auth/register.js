@@ -24,7 +24,7 @@ const register = async (req, res, next) => {
     const mail = {
       to: email,
       subject: "Email confirmation",
-      html: `<a  href="http://localhost:4040/api/users/verify/${verifyToken}" target="_blank">Confirm your email</a>`,
+      html: `<a  href="https://watchentrailer.herokuapp.com/api/users/verify/${verifyToken}" target="_blank">Confirm your email</a>`,
     };
 
     await sendEmail(mail);
