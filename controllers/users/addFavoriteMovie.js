@@ -5,7 +5,7 @@ const addFavoriteMovie = async (req, res, next) => {
     const { _id } = req.user;
     User.findById(_id, function (err, user) {
       if (err) return console.error(err);
-      user.favorite.push(req.body);
+      user.favorite.unshift(req.body);
       user.save(function (err) {
         if (err) throw err;
         console.log("The operation was successful");
@@ -22,5 +22,4 @@ const addFavoriteMovie = async (req, res, next) => {
   }
 };
 
-// http://localhost:4040/api/users/add
 module.exports = addFavoriteMovie;
